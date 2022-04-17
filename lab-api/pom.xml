@@ -4,12 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>FreeLab</artifactId>
-        <groupId>org.freelab</groupId>
-        <version>3.3.1</version>
+        <groupId>org.xy</groupId>
+        <version>0.2.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>lab-api</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>lab-account-api</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -17,6 +21,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.xy</groupId>
+            <artifactId>lab-common</artifactId>
+            <version>0.2.1</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
