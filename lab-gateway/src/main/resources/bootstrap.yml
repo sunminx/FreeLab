@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: lab-gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: account_route
+          uri: http://localhost:10280
+          predicates:
+            - Path=/account/**
+server:
+  port: 10180
