@@ -1,2 +1,4 @@
-package com.xy.account;public interface IAccountApi {
+package com.xy.account;
+
+public interface IAccountApi {
 }
