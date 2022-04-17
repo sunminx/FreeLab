@@ -1,0 +1,13 @@
+#maven
+target
+logs
+
+# idea
+.idea
+*.iml
+
+#package files
+*.jar
+*.war
+*.ear
+/target
