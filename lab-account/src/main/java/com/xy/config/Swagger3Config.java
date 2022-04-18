@@ -2,6 +2,7 @@ package com.xy.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
@@ -17,7 +18,12 @@ public class Swagger3Config {
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.OAS_30) // 指定swagger3.0版本
-                .apiInfo(createApiInfo());
+                .groupName("cruzgo")
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.xy.controller"))
+                .build()
+                .apiInfo(createApiInfo())
+                .enable(true);
     }
     /**
      * 配置swagger的ApiInfo bean * @return
