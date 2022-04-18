@@ -1,5 +1,8 @@
 spring:
   application:
     name: lab-account-service
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 server:
   port: 10280
