@@ -4,9 +4,18 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: account_route
+        - id: account-route
           uri: http://localhost:10280
           predicates:
             - Path=/account/**
+          filters:
+            - StripPrefix=1
 server:
   port: 10180
+
+swagger:
+  enabled: true
+
+#gateway-config:
+#  uriWhitelist:
+#    - /v3/api-docs
